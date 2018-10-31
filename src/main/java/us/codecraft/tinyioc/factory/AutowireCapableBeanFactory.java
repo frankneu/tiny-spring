@@ -25,6 +25,12 @@ public class AutowireCapableBeanFactory extends AbstractBeanFactory {
 		return beanDefinition.getBeanClass().newInstance();
 	}
 
+	/**
+	 * 对bean初始化时，属性是另外一个bean的情况进行处理
+	 * @param bean
+	 * @param mbd
+	 * @throws Exception
+	 */
 	protected void applyPropertyValues(Object bean, BeanDefinition mbd) throws Exception {
 		for (PropertyValue propertyValue : mbd.getPropertyValues().getPropertyValues()) {
 			Field declaredField = bean.getClass().getDeclaredField(propertyValue.getName());
