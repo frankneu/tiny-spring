@@ -25,6 +25,9 @@ public class ClassPathXmlApplicationContext extends AbstractApplicationContext {
 		refresh();
 	}
 
+	/**
+	 * 加载出bean的定义，并保存到beanFactory中
+	 */
 	@Override
 	public void refresh() throws Exception {
 		XmlBeanDefinitionReader xmlBeanDefinitionReader = new XmlBeanDefinitionReader(new ResourceLoader());
