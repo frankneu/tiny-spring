@@ -34,6 +34,7 @@ public abstract class AbstractBeanFactory implements BeanFactory {
 		return bean;
 	}
 
+	//初始化bean，在初始化前后调用对应的前置后置方法
 	protected Object initializeBean(Object bean, String name) throws Exception {
 		for (BeanPostProcessor beanPostProcessor : beanPostProcessors) {
 			bean = beanPostProcessor.postProcessBeforeInitialization(bean, name);
