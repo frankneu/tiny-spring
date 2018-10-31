@@ -74,6 +74,12 @@ public class AspectJExpressionPointcut implements Pointcut, ClassFilter, MethodM
 		return pointcutExpression.couldMatchJoinPointsInType(targetClass);
 	}
 
+	/**
+	 * 使用aspectj的表达式进行切面配置，判断切入时机
+	 * @param method
+	 * @param targetClass
+	 * @return
+	 */
 	@Override
 	public boolean matches(Method method, Class targetClass) {
 		checkReadyToMatch();
